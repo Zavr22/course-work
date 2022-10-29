@@ -37,6 +37,40 @@ public class HelloController {
 
     @FXML
     void initialize() {
+        autorithationButton.setOnAction((event -> {
+            String login=login_field.getText().trim();
+            String password=password_field.getText().trim();
+            if((login.equals("admin")) && (password.equals("admin")) )
+            {
+                autorithationButton.getScene().getWindow().hide();
+                FXMLLoader loader1 = new FXMLLoader();
+                loader1.setLocation(getClass().getResource("/com/example/demo4/adminMenu.fxml"));
+                try {
+                    loader1.load();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                Parent root1 = loader1.getRoot();
+                Stage stage1 = new Stage();
+                stage1.setScene(new Scene(root1));
+                stage1.show();
+            }
+            if((!login.equals(""))&&(!password.equals("")))
+                loginUser(login,password);
+            else {
+                FXMLLoader loader=new FXMLLoader();
+                loader.setLocation(getClass().getResource("/com/example/demo4/error1.fxml"));
+                try {
+                    loader.load();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                Parent root=loader.getRoot();
+                Stage stage=new Stage();
+                stage.setScene(new Scene(root));
+                stage.showAndWait();
+            }
+        }));
         signUpButton.setOnAction(event -> {
           signUpButton.getScene().getWindow().hide();
             FXMLLoader loader=new FXMLLoader();
@@ -51,5 +85,9 @@ public class HelloController {
             stage.setScene(new Scene(root));
             stage.showAndWait();
         });
+    }
+
+    public static boolean loginUser(String login, String password) {
+        return true;
     }
 }

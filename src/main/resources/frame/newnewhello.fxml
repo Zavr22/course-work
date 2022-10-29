@@ -12,12 +12,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #2344;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo4.HelloController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="795.0" layoutX="-2.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: blur;">
+      <ImageView fitHeight="400.0" fitWidth="795.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" style="-fx-effect: blur;">
          <image>
             <Image url="@Frame4.png" />
          </image>
       </ImageView>
-      <TextField fx:id="login_field" alignment="CENTER" layoutX="153.0" layoutY="145.0" opacity="0.85" prefHeight="26.0" prefWidth="393.0" promptText="Логин" style="-fx-border-radius: 5;">
+      <TextField fx:id="login_field" alignment="CENTER" layoutX="166.0" layoutY="159.0" opacity="0.85" prefHeight="26.0" prefWidth="393.0" promptText="Логин" style="-fx-border-radius: 5;">
          <effect>
             <InnerShadow height="12.16" radius="5.58" width="12.16">
                <color>
@@ -26,7 +26,7 @@
             </InnerShadow>
          </effect>
       </TextField>
-      <PasswordField fx:id="password_field" alignment="CENTER" layoutX="151.0" layoutY="208.0" opacity="0.85" prefHeight="26.0" prefWidth="393.0" promptText="Пароль" style="-fx-border-radius: 5;">
+      <PasswordField fx:id="password_field" alignment="CENTER" layoutX="169.0" layoutY="222.0" opacity="0.85" prefHeight="26.0" prefWidth="393.0" promptText="Пароль" style="-fx-border-radius: 5;">
          <effect>
             <InnerShadow height="18.97" radius="7.715" width="13.89">
                <color>
@@ -35,7 +35,7 @@
             </InnerShadow>
          </effect>
       </PasswordField>
-      <Button fx:id="autorithationButton" layoutX="152.0" layoutY="308.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="161.0" text="Войти">
+      <Button fx:id="autorithationButton" layoutX="256.0" layoutY="282.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="184.0" text="Войти">
          <effect>
             <InnerShadow choke="0.18">
                <color>
@@ -44,7 +44,7 @@
             </InnerShadow>
          </effect>
       </Button>
-      <Button fx:id="signUpButton" layoutX="384.0" layoutY="308.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="161.0" text="зарегистрироваться">
+      <Button fx:id="signUpButton" layoutX="474.0" layoutY="38.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="160.0" text="зарегистрироваться">
          <font>
             <Font name="Verdana" size="13.0" />
          </font>
