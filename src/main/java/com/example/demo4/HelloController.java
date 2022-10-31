@@ -87,7 +87,6 @@ public class HelloController {
         });
     }
 
-    public static boolean loginUser(String login, String password) {
-        return true;
+    public static void loginUser(String login, String password) {
     }
 }
