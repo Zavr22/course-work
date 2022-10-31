@@ -55,17 +55,7 @@ public class HelloController {
         }));
         signUpButton.setOnAction(event -> {
           signUpButton.getScene().getWindow().hide();
-            FXMLLoader loader=new FXMLLoader();
-            loader.setLocation(getClass().getResource("/com/example/demo4/registration.fxml"));
-            try {
-                loader.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            Parent root=loader.getRoot();
-            Stage stage=new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
+            oppenNewScene("/com/example/demo4/registration.fxml");
         });
     }
 

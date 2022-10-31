@@ -50,6 +50,13 @@ public class registrationController {
             buttonBack.getScene().getWindow().hide();
             oppenNewScene("/com/example/demo4/Hello.fxml");
         });
+        DatabaseHandler db=new DatabaseHandler();
+        signnUpButton.setOnAction(event -> {
+            if (checkBoxAgreemet.isSelected())
+            db.signUp(name_field.getText(),surname_field.getText(),password_field.getText(),login_field.getText());
+else
+                oppenNewScene("/com/example/demo4/error1.fxml");
+        });
     }
 
 
