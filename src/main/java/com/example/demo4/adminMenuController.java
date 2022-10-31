@@ -10,6 +10,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+import static com.example.demo4.metods.oppenNewScene;
+
 public class adminMenuController {
 
     @FXML
@@ -37,17 +39,7 @@ public class adminMenuController {
     void initialize() {
         buttonBack.setOnAction(event -> {
             buttonBack.getScene().getWindow().hide();
-            FXMLLoader loader1 = new FXMLLoader();
-            loader1.setLocation(getClass().getResource("/com/example/demo4/Hello.fxml"));
-            try {
-                loader1.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            Parent root1 = loader1.getRoot();
-            Stage stage1 = new Stage();
-            stage1.setScene(new Scene(root1));
-            stage1.show();
+            oppenNewScene("/com/example/demo4/Hello.fxml");
         });
     }
 
