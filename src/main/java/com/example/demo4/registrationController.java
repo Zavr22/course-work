@@ -2,6 +2,7 @@ package com.example.demo4;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +14,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import static com.example.demo4.metods.oppenNewScene;
+import static com.example.demo4.metods.*;
 
 public class registrationController {
 
@@ -59,6 +60,9 @@ public class registrationController {
             String passwor=password_field.getText();
             User user=new User(name, surName,login,passwor);
             DatabaseHandler db=new DatabaseHandler();
+            if(checkUserLogin(user))
+                oppenNewScene("/com/example/demo4/error3.fxml");
+            else
             if (checkBoxAgreemet.isSelected() && !login_field.getText().equals("")
                     && !password_field.getText().equals("")&& !name_field.getText().equals("")
                     && !surname_field.getText().equals(""))

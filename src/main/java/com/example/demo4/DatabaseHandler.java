@@ -50,4 +50,19 @@ public ResultSet getUser(User user){
     }
     return rs;
 }
+    public ResultSet getUserLogin(User user){
+        ResultSet rs=null;
+        String select = "SELECT * FROM "+Constants.USER_TABLE+" WHERE "+ Constants.USER_LOGIN+
+                "=?";
+        try {
+            PreparedStatement pr=getDbConnection().prepareStatement(select);
+            pr.setString(1, user.getLogin());
+            rs=pr.executeQuery();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return rs;
+    }
 }

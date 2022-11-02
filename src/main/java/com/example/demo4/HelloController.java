@@ -17,6 +17,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import static com.example.demo4.metods.checkUser;
 import static com.example.demo4.metods.oppenNewScene;
 
 public class HelloController {
@@ -62,21 +63,10 @@ public class HelloController {
     }
 
     public static void loginUser(String login, String password) {
-        DatabaseHandler dbH=new DatabaseHandler();
         User user = new User();
         user.setLogin(login);
         user.setPassword(password);
-        ResultSet res=dbH.getUser(user);
-        int counter=0;
-        while (true){
-            try {
-                if (!res.next()) break;
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-            counter++;
-        }
-        if (counter==1)
+        if (checkUser(user))
             oppenNewScene("/com/example/demo4/okScene.fxml");
     }
 }

@@ -6,6 +6,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class metods {
     public static void oppenNewScene(String window)
@@ -22,4 +24,36 @@ public class metods {
         stage1.setScene(new Scene(root1));
         stage1.show();
     }
+    public static boolean checkUser(User user) {
+        DatabaseHandler dbH = new DatabaseHandler();
+        ResultSet res = dbH.getUser(user);
+        int counter = 0;
+        while (true) {
+            try {
+                if (!res.next()) break;
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            counter++;
+        }
+        if (counter == 1) return true;
+        else return false;
+    }
+
+        public static boolean checkUserLogin(User user)
+        {
+            DatabaseHandler dbH=new DatabaseHandler();
+            ResultSet res=dbH.getUserLogin(user);
+            int counter=0;
+            while (true){
+                try {
+                    if (!res.next()) break;
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                counter++;
+            }
+            if (counter ==1) return true;
+            else return false;
+        }
 }

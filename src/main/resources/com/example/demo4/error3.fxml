@@ -7,7 +7,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="123.0" prefWidth="367.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo4.error1Controller">
     <children>
-        <Text fx:id="textField" layoutX="69.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="вы не согласны проиграть квартиру" wrappingWidth="229.21630859375" />
+        <Text fx:id="textField" layoutX="69.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Такой пользователь уже есть" wrappingWidth="229.21630859375" />
         <Button fx:id="okButton" layoutX="157.0" layoutY="74.0" mnemonicParsing="false" text="окей" />
     </children>
 </AnchorPane>
