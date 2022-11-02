@@ -50,12 +50,21 @@ public class registrationController {
             buttonBack.getScene().getWindow().hide();
             oppenNewScene("/com/example/demo4/Hello.fxml");
         });
-        DatabaseHandler db=new DatabaseHandler();
+
+
         signnUpButton.setOnAction(event -> {
-            if (checkBoxAgreemet.isSelected())
-            db.signUp(name_field.getText(),surname_field.getText(),password_field.getText(),login_field.getText());
-else
-                oppenNewScene("/com/example/demo4/error1.fxml");
+            String name=name_field.getText();
+            String surName=surname_field.getText();
+            String login=login_field.getText();
+            String passwor=password_field.getText();
+            User user=new User(name, surName,login,passwor);
+            DatabaseHandler db=new DatabaseHandler();
+            if (checkBoxAgreemet.isSelected() && !login_field.getText().equals("")
+                    && !password_field.getText().equals("")&& !name_field.getText().equals("")
+                    && !surname_field.getText().equals(""))
+            db.signUp(user);
+            else
+                oppenNewScene("/com/example/demo4/error2.fxml");
         });
     }
 

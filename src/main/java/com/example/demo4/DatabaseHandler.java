@@ -1,9 +1,6 @@
 package com.example.demo4;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Driver;
+import java.sql.*;
+
 public class DatabaseHandler extends Configs{
     Connection dbConnection;
 
@@ -19,22 +16,38 @@ public class DatabaseHandler extends Configs{
 
         return dbConnection;
     }
-public void signUp(String name, String surname,String password,String login )
+public void signUp(User user )
 {
 String insert="INSERT INTO "+Constants.USER_TABLE+"("+Constants.USER_LOGIN+","+Constants.USER_PASSWORD+","+
         Constants.USER_NAME+","+Constants.USER_SURNAME+")"+"VALUES(?,?,?,?)";
 
     try {
         PreparedStatement pr=getDbConnection().prepareStatement(insert);
-        pr.setString(1, login);
-        pr.setString(2, password);
-        pr.setString(3, name);
-        pr.setString(4, surname);
+        pr.setString(1, user.getLogin());
+        pr.setString(2, user.getPassword());
+        pr.setString(3, user.getName());
+        pr.setString(4, user.getSurName());
         pr.executeUpdate();
     } catch (SQLException e) {
         throw new RuntimeException(e);
     } catch (ClassNotFoundException e) {
         throw new RuntimeException(e);
     }
+}
+public ResultSet getUser(User user){
+        ResultSet rs=null;
+        String select = "SELECT * FROM "+Constants.USER_TABLE+" WHERE "+ Constants.USER_LOGIN+
+                "=? AND "+Constants.USER_PASSWORD+"=?";
+    try {
+        PreparedStatement pr=getDbConnection().prepareStatement(select);
+        pr.setString(1, user.getLogin());
+        pr.setString(2, user.getPassword());
+        rs=pr.executeQuery();
+    } catch (SQLException e) {
+        throw new RuntimeException(e);
+    } catch (ClassNotFoundException e) {
+        throw new RuntimeException(e);
+    }
+    return rs;
 }
 }

@@ -8,6 +8,8 @@ import javafx.scene.control.Label;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -60,5 +62,21 @@ public class HelloController {
     }
 
     public static void loginUser(String login, String password) {
+        DatabaseHandler dbH=new DatabaseHandler();
+        User user = new User();
+        user.setLogin(login);
+        user.setPassword(password);
+        ResultSet res=dbH.getUser(user);
+        int counter=0;
+        while (true){
+            try {
+                if (!res.next()) break;
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            counter++;
+        }
+        if (counter==1)
+            oppenNewScene("/com/example/demo4/okScene.fxml");
     }
 }
