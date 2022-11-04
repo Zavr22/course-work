@@ -71,6 +71,4 @@ public class registrationController {
                 oppenNewScene("/com/example/demo4/error2.fxml");
         });
     }
-
-
 }
