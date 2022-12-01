@@ -41,6 +41,10 @@ public class adminMenuController {
             buttonBack.getScene().getWindow().hide();
             oppenNewScene("/com/example/demo4/Hello.fxml");
         });
+        userButton.setOnAction(event->{
+            userButton.getScene().getWindow().hide();
+            oppenNewScene("/com/example/demo4/userApprove.fxml");
+        });
     }
 
 }

@@ -3,8 +3,10 @@ package com.example.demo4;
 import javafx.fxml.FXML;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -46,10 +48,37 @@ public class HelloController {
                     autorithationButton.getScene().getWindow().hide();
                     oppenNewScene("/com/example/demo4/admin.fxml");
                 }
-                else
-               if (checkUser(user))
-                   oppenNewScene("/com/example/demo4/okScene.fxml");
-            }
+                else {
+
+                    try {
+                        if (checkUser(user) && checkApprove(user) )
+                            oppenNewScene("/com/example/demo4/UserMenu.fxml");
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                    try {
+                        if (!checkUser(user) )
+                        {
+                            Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+                           alert.setContentText("Неправильный логин или пароль");
+                            alert.showAndWait();
+                        }
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                    try {
+                       if (!checkApprove(user))
+                     {
+                         Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
+                          alert.setContentText("Вас не подтвердил админ");
+                          alert.showAndWait();
+                      }
+                  } catch (SQLException e) {
+                       throw new RuntimeException(e);
+                    }
+
+                }
+                }
             else {
                oppenNewScene("/com/example/demo4/error1.fxml");
             }

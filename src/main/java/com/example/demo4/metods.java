@@ -24,19 +24,22 @@ public class metods {
         stage1.setScene(new Scene(root1));
         stage1.show();
     }
-    public static boolean checkUser(User user) {
+    public static boolean checkUser(User user) throws SQLException {
         DatabaseHandler dbH = new DatabaseHandler();
-        ResultSet res = dbH.getUser(user);
+        ResultSet res= dbH.getUser(user);
         int counter = 0;
         while (true) {
             try {
+
                 if (!res.next()) break;
+
+
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
             counter++;
         }
-        if (counter == 1) return true;
+        if (counter == 1 ) return true;
         else return false;
     }
 
@@ -56,4 +59,13 @@ public class metods {
             if (counter ==1) return true;
             else return false;
         }
+    public static boolean checkApprove(User user) throws SQLException {
+        DatabaseHandler dbHA = new DatabaseHandler();
+        ResultSet res1 = dbHA.getUser(user);
+        res1.next();
+       int approve=res1.getInt("isApprove");
+        if( approve!=0) return true;
+        else return false;
+    }
+
 }

@@ -1,16 +1,24 @@
 package com.example.demo4;
 
 public class User {
-  static   int userID;
+  private   int userID,isApprove;
     private String name,surName,login,password;
 
-    public User( String name, String surName, String login, String password) {
+    public User( String name, String surName, String login, String password,int isApprove) {
         this.name = name;
         this.surName = surName;
         this.login = login;
         this.password = password;
+        this.isApprove=isApprove;
     }
     public User(){
+    }
+
+    public User(int isApprove, String name, String surName, String login) {
+        this.isApprove = isApprove;
+        this.name = name;
+        this.surName = surName;
+        this.login = login;
     }
 
     public int getUserID() {
@@ -47,6 +55,14 @@ public class User {
 
     public void setLogin(String login) {
         this.login = login;
+    }
+
+    public int getIsApprove() {
+        return isApprove;
+    }
+
+    public void setApproved(int approved) {
+        this.isApprove = approved;
     }
 
     public void setPassword(String password) {

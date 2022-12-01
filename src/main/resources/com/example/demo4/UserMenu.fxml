@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #2344;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo4.UserMenuController">
+    <children>
+        <ImageView fitHeight="400.0" fitWidth="700.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@fraim/Frame4.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="moneyButton" layoutX="62.0" layoutY="150.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="270.0" text="Пополнить счет" />
+        <Button fx:id="bidButton" layoutX="395.0" layoutY="150.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="270.0" text="Сделать ставку" />
+        <Button fx:id="bidSotoryButton" layoutX="62.0" layoutY="223.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="270.0" text="Просмотр истории ставок" />
+        <Button fx:id="buttonBack" layoutX="35.0" layoutY="25.0" mnemonicParsing="false" text="Назад" />
+        <Button fx:id="charatyButton" layoutX="395.0" layoutY="223.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="270.0" text="благотворительность" />
+    </children>
+</AnchorPane>

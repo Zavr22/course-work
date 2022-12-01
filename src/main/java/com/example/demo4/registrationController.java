@@ -57,16 +57,19 @@ public class registrationController {
             String name=name_field.getText();
             String surName=surname_field.getText();
             String login=login_field.getText();
-            String passwor=password_field.getText();
-            User user=new User(name, surName,login,passwor);
+            String password=password_field.getText();
+            User user=new User(name, surName,login,password,0);
             DatabaseHandler db=new DatabaseHandler();
             if(checkUserLogin(user))
                 oppenNewScene("/com/example/demo4/error3.fxml");
             else
             if (checkBoxAgreemet.isSelected() && !login_field.getText().equals("")
                     && !password_field.getText().equals("")&& !name_field.getText().equals("")
-                    && !surname_field.getText().equals(""))
-            db.signUp(user);
+                    && !surname_field.getText().equals("")) {
+                db.signUp(user);
+                signnUpButton.getScene().getWindow().hide();
+                oppenNewScene("/com/example/demo4/Hello.fxml");
+            }
             else
                 oppenNewScene("/com/example/demo4/error2.fxml");
         });
