@@ -92,5 +92,23 @@ public ResultSet getUser(User user){
             throw new RuntimeException(e);
         }
     }
+    public void createBet(Bet bet )
+    {
+        String insert="INSERT INTO "+" bet "+"("+"team_1, team_2, kev_1, kev_2)"  + "VALUES (?,?,?,?)";
+
+        try {
+            PreparedStatement pr=getDbConnection().prepareStatement(insert);
+            pr.setString(1, bet.getTeam1());
+            pr.setString(2, bet.getTeam1());
+            pr.setDouble(3, bet.getKev1());
+            pr.setDouble(4, bet.getKev2());
+
+            pr.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 }

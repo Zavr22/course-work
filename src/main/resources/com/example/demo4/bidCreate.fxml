@@ -20,5 +20,6 @@
       <TextField fx:id="secondTeamField" layoutX="409.0" layoutY="189.0" prefHeight="26.0" prefWidth="212.0" promptText="Команда 2" />
       <TextField fx:id="firstKevField" layoutX="54.0" layoutY="234.0" prefHeight="26.0" prefWidth="212.0" promptText="Коэфицент на победу команды 1" />
       <TextField fx:id="secondKevField" layoutX="409.0" layoutY="235.0" prefHeight="26.0" prefWidth="212.0" promptText="Кофэицент на победу команды 2" />
+      <Button fx:id="createButton" layoutX="280.0" layoutY="312.0" mnemonicParsing="false" text="создать ставку" />
     </children>
 </AnchorPane>
