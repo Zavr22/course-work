@@ -1,14 +1,10 @@
 package com.example.demo4;
 
-import java.io.IOException;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
 import static com.example.demo4.metods.oppenNewScene;
 
@@ -44,6 +40,10 @@ public class adminMenuController {
         userButton.setOnAction(event->{
             userButton.getScene().getWindow().hide();
             oppenNewScene("/com/example/demo4/userApprove.fxml");
+        });
+        bidButton.setOnAction(event->{
+            bidButton.getScene().getWindow().hide();
+            oppenNewScene("/com/example/demo4/bidCreate.fxml");
         });
     }
 

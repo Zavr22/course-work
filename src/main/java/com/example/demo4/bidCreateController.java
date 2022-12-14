@@ -7,7 +7,6 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static com.example.demo4.metods.checkUserLogin;
 import static com.example.demo4.metods.oppenNewScene;
 
 public class bidCreateController {
@@ -58,7 +57,7 @@ public class bidCreateController {
                 double kev2= Double.parseDouble(secondKevField.getText());
                 Bet bet=new Bet(team1,team2,kev1,kev2);
                 DatabaseHandler db=new DatabaseHandler();
-                if (checkBoxAgreemet.isSelected() && !login_field.getText().equals("")
+                /*if (checkBoxAgreemet.isSelected() && !login_field.getText().equals("")
                         && !password_field.getText().equals("")&& !name_field.getText().equals("")
                         && !surname_field.getText().equals("")) {
                     db.createBet(bet);
@@ -67,10 +66,12 @@ public class bidCreateController {
                 }
                 else
                     oppenNewScene("/com/example/demo4/error2.fxml");
-            });
-        }
+            });*/
+        });
+
 
 
     }
+}
 
 
