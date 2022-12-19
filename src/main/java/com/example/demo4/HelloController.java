@@ -3,7 +3,9 @@ package com.example.demo4;
 import javafx.fxml.FXML;
 
 import java.net.URL;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javafx.scene.control.Alert;
@@ -32,6 +34,7 @@ public class HelloController {
 
     @FXML
     private Button signUpButton;
+    static User  selectedUser;
 
     @FXML
     void initialize() {
@@ -51,8 +54,21 @@ public class HelloController {
                 else {
 
                     try {
-                        if (checkUser(user) && checkApprove(user) )
+                        if (checkUser(user) && checkApprove(user) ) {
+                            ResultSet res1=null;
+                            DatabaseHandler dbh2=new DatabaseHandler();
+                            res1=dbh2.getUser(user);
+                            res1.next();
+                            int id=res1.getInt("idUser");
+                            String Login=res1.getString("login");
+                            String Password=res1.getString("password");
+                            String Name=res1.getString("name");
+                            String SurName=res1.getString("surname");
+                            double money=res1.getDouble("money");
+                            selectedUser=new User(id,Name,SurName,Login,Password,money);
+                            autorithationButton.getScene().getWindow().hide();
                             oppenNewScene("/com/example/demo4/UserMenu.fxml");
+                        }
                     } catch (SQLException e) {
                         throw new RuntimeException(e);
                     }
@@ -84,7 +100,7 @@ public class HelloController {
             }
        });
         signUpButton.setOnAction(event -> {
-          signUpButton.getScene().getWindow().hide();
+            signUpButton.getScene().getWindow().hide();
             oppenNewScene("/com/example/demo4/registration.fxml");
         });
     }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #2344;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo4.bidMenuController">
+    <children>
+        <ImageView fitHeight="400.0" fitWidth="700.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@fraim/Frame4.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="buttonBack" layoutX="35.0" layoutY="25.0" mnemonicParsing="false" text="Назад" />
+      <TableView fx:id="Table" layoutX="3.0" layoutY="100.0" prefHeight="200.0" prefWidth="700.0">
+        <columns>
+            <TableColumn fx:id="sportField" prefWidth="135.0" text="Вид спорта" />
+          <TableColumn fx:id="team1Field" prefWidth="176.0" text="команда 1" />
+          <TableColumn fx:id="team2Field" prefWidth="198.0" text="Команда 2" />
+            <TableColumn fx:id="kev1Field" prefWidth="88.0" text="кэф 1" />
+            <TableColumn fx:id="team2Kev" prefWidth="102.0" text="кэф 2" />
+            <TableColumn fx:id="idcolumn" prefWidth="135.0" text="ID" />
+        </columns>
+      </TableView>
+      <Button fx:id="makeButton" layoutX="298.0" layoutY="339.0" mnemonicParsing="false" text="сделать ставку" />
+      <TextField fx:id="error" layoutX="255.0" layoutY="313.0" text="Вы не выбрали савку" visible="false" />
+    </children>
+</AnchorPane>

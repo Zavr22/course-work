@@ -29,6 +29,25 @@ public class UserMenuController {
             buttonBack.getScene().getWindow().hide();
             oppenNewScene("/com/example/demo4/Hello.fxml");
         });
+        bidButton.setOnAction(event -> {
+            bidButton.getScene().getWindow().hide();
+            oppenNewScene("/com/example/demo4/bidMenuUser.fxml");
+        });
+        bidSotoryButton.setOnAction(event -> {
+            bidSotoryButton.getScene().getWindow().hide();
+            oppenNewScene("/com/example/demo4/bidStoryUser.fxml");
+
+        });
+        charatyButton.setOnAction(event -> {
+            charatyButton.getScene().getWindow().hide();
+            oppenNewScene("/com/example/demo4/Charity.fxml");
+
+        });
+        moneyButton.setOnAction(event -> {
+            moneyButton.getScene().getWindow().hide();
+            oppenNewScene("/com/example/demo4/Money.fxml");
+
+        });
 
     }
 

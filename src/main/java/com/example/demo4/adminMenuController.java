@@ -45,6 +45,18 @@ public class adminMenuController {
             userButton.getScene().getWindow().hide();
             oppenNewScene("/com/example/demo4/userApprove.fxml");
         });
+        bidButton.setOnAction(event->{
+            bidButton.getScene().getWindow().hide();
+            oppenNewScene("/com/example/demo4/bidCreate.fxml");
+        });
+        bidWinnerButton.setOnAction(event -> {
+            bidWinnerButton.getScene().getWindow().hide();
+            oppenNewScene("/com/example/demo4/bidApprove.fxml");
+        });
+        storyButton.setOnAction(event -> {
+            storyButton.getScene().getWindow().hide();
+            oppenNewScene("/com/example/demo4/bidStoryAdmin.fxml");
+        });
     }
 
 }

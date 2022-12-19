@@ -24,8 +24,7 @@
             <TableColumn fx:id="approvedfield" prefWidth="63.0" text="approved" />
         </columns>
       </TableView>
-      <Button fx:id="approveButton" layoutX="105.0" layoutY="344.0" mnemonicParsing="false" text="Подтвердить" />
-      <Button fx:id="infoButton" layoutX="449.0" layoutY="344.0" mnemonicParsing="false" text="Просмотр информации" />
+      <Button fx:id="approveButton" layoutX="285.0" layoutY="346.0" mnemonicParsing="false" text="Подтвердить" />
       <TextField fx:id="errorText" layoutX="252.0" layoutY="312.0" text="Вы не выбрали акканут" visible="false" />
     </children>
 </AnchorPane>

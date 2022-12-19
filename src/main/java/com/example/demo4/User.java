@@ -3,8 +3,30 @@ package com.example.demo4;
 public class User {
   private   int userID,isApprove;
     private String name,surName,login,password;
+    private Double money;
 
-    public User( String name, String surName, String login, String password,int isApprove) {
+    public User(int userID,  String name, String surName, String login, String password, Double money) {
+        this.userID = userID;
+        this.name = name;
+        this.surName = surName;
+        this.login = login;
+        this.password = password;
+        this.money = money;
+    }
+
+    public User(Double money) {
+        this.money = money;
+    }
+
+    public Double getMoney() {
+        return money;
+    }
+
+    public void setMoney(Double money) {
+        this.money = money;
+    }
+
+    public User(String name, String surName, String login, String password, int isApprove) {
         this.name = name;
         this.surName = surName;
         this.login = login;

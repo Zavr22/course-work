@@ -56,14 +56,15 @@ public class bidCreateController {
                 String team2=secondTeamField.getText();
                 double kev1= Double.parseDouble(firstKevField.getText());
                 double kev2= Double.parseDouble(secondKevField.getText());
-                Bet bet=new Bet(team1,team2,kev1,kev2);
+                String sport=spotField.getText();
+                Bet bet=new Bet(team1,team2,kev1,kev2,sport);
                 DatabaseHandler db=new DatabaseHandler();
-                if (checkBoxAgreemet.isSelected() && !login_field.getText().equals("")
-                        && !password_field.getText().equals("")&& !name_field.getText().equals("")
-                        && !surname_field.getText().equals("")) {
+              if ( !firstKevField.getText().equals("")
+                        && !secondKevField.getText().equals("")&& !firstTeamField.getText().equals("")
+                        && !secondTeamField.getText().equals("") && !spotField.getText().equals("")) {
                     db.createBet(bet);
-                    signnUpButton.getScene().getWindow().hide();
-                    oppenNewScene("/com/example/demo4/Hello.fxml");
+                    createButton.getScene().getWindow().hide();
+                    oppenNewScene("/com/example/demo4/bidCreate.fxml");
                 }
                 else
                     oppenNewScene("/com/example/demo4/error2.fxml");
