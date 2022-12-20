@@ -12,7 +12,7 @@
     <children>
         <ImageView fitHeight="400.0" fitWidth="700.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@fraim/Frame4.png" />
+                <Image url="@fraim/Fram.png" />
             </image>
         </ImageView>
         <TextField fx:id="login_field" layoutX="62.0" layoutY="186.0" prefHeight="26.0" prefWidth="238.0" promptText="Логин" style="-fx-border-radius: 5;" />
